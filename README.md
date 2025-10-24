@@ -56,7 +56,7 @@ To run this project locally:
 ```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/Mohd-Amir-ai/Hivefusion-lab-website-.git
-cd <repo-name>
+cd Hivefusion-lab-website-
 
 # 2️⃣ Create and activate virtual environment
 python -m venv venv
