@@ -1,0 +1,378 @@
+:root {
+    --hf-checkbox-size: 20px;
+    /* visual size */
+    --hf-checkbox-border: 1px;
+    /* border thickness */
+    --hf-checkbox-radius: 4px;
+    /* rounded corners */
+    --hf-checkbox-bg: #ffffff;
+    /* unchecked bg */
+    --hf-checkbox-border-color: rgba(0, 0, 0, 0.12);
+    /* subtle border */
+    --hf-checkbox-checked-bg: #0b2227;
+    /* primary dark fill */
+    --hf-checkbox-checked-border: rgba(11, 34, 39, 0.9);
+    --hf-checkbox-shadow: 0 2px 6px rgba(9, 18, 20, 0.04);
+    --hf-checkbox-focus-ring: 3px;
+    /* thickness of outer focus ring */
+    --hf-checkbox-focus-color: rgba(11, 34, 39, 0.12);
+    --hf-checkbox-checkmark: #fff;
+    /* checkmark color */
+    --hf-checkbox-transition: 120ms cubic-bezier(.2, .9, .3, 1);
+    --hf-checkbox-disabled-opacity: 0.5;
+}
+
+
+
+.checkout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+@media (max-width: 860px) {
+    .checkout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+.section__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--primary-text);
+}
+
+/* Order summary */
+.order__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.order__img {
+    border-radius: 8px;
+    background: var(--alternate-bg);
+}
+
+.order__details {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.order__name {
+    font-weight: 600;
+}
+
+.order__meta {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+}
+
+.order__price {
+    font-weight: 600;
+}
+
+.summary__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.summary__total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+/* Form */
+.form {
+    display: grid;
+    gap: 20px;
+}
+
+.form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .form__row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form__label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-text);
+}
+
+.form__input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
+.hf-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    /* space between box and label text */
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Keep the native checkbox for accessibility but hide visually */
+.hf-checkbox__input {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Visual box shown to users */
+.hf-checkbox__box {
+    width: var(--hf-checkbox-size);
+    height: var(--hf-checkbox-size);
+    min-width: var(--hf-checkbox-size);
+    display: inline-grid;
+    place-items: center;
+    border-radius: var(--hf-checkbox-radius);
+    background: var(--hf-checkbox-bg);
+    border: var(--hf-checkbox-border) solid var(--hf-checkbox-border-color);
+    box-shadow: var(--hf-checkbox-shadow);
+    transition: background var(--hf-checkbox-transition), border-color var(--hf-checkbox-transition), transform var(--hf-checkbox-transition);
+    flex-shrink: 0;
+    position: relative;
+    box-sizing: border-box;
+    isolation: isolate;
+}
+
+/* Checkmark using inline SVG for crisp rendering at small sizes */
+.hf-checkbox__box::after {
+    content: "";
+    width: calc(var(--hf-checkbox-size) * 0.56);
+    height: calc(var(--hf-checkbox-size) * 0.56);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity var(--hf-checkbox-transition), transform var(--hf-checkbox-transition);
+    pointer-events: none;
+    /* white checkmark SVG — color is preserved by fill value below */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M20.285 5.709a1 1 0 0 0-1.414-1.418L9 14.16 5.129 10.29a1 1 0 0 0-1.414 1.417l4.95 4.95a1 1 0 0 0 1.414 0z"/></svg>');
+}
+
+/* When checked: background, border, show checkmark */
+.hf-checkbox__input:checked+.hf-checkbox__box {
+    background: var(--hf-checkbox-checked-bg);
+    border-color: var(--hf-checkbox-checked-border);
+}
+
+.hf-checkbox__input:checked+.hf-checkbox__box::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Slight press effect for tactile feel */
+.hf-checkbox:active .hf-checkbox__box {
+    transform: translateY(0.5px) scale(0.997);
+}
+
+/* Focus styles — visible and meets contrast requirements */
+.hf-checkbox__input:focus+.hf-checkbox__box,
+.hf-checkbox__input:focus-visible+.hf-checkbox__box {
+    outline: none;
+    box-shadow:
+        0 2px 6px rgba(9, 18, 20, 0.04),
+        0 0 0 var(--hf-checkbox-focus-ring) var(--hf-checkbox-focus-color);
+}
+
+/* Hover — subtle lift */
+.hf-checkbox__box:hover {
+    transform: translateY(-1px);
+}
+
+/* Label text style (keeps compatibility with existing typographic system) */
+.hf-checkbox__label {
+    color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Disabled state */
+.hf-checkbox--disabled {
+    cursor: not-allowed;
+    opacity: var(--hf-checkbox-disabled-opacity);
+}
+
+.hf-checkbox--disabled .hf-checkbox__box {
+    box-shadow: none;
+    transform: none;
+}
+
+.hf-checkbox--disabled .hf-checkbox__label {
+    cursor: not-allowed;
+}
+
+/* Error / validation state — optional */
+.hf-checkbox--error .hf-checkbox__box {
+    border-color: #b42318;
+    /* accessible error red */
+    box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.06);
+}
+
+/* High-contrast mode adjustments */
+@media (forced-colors: active) {
+    .hf-checkbox__box {
+        border-color: ButtonText;
+        background: ButtonFace;
+    }
+
+    .hf-checkbox__input:checked+.hf-checkbox__box {
+        background: Highlight;
+        border-color: Highlight;
+    }
+
+    .hf-checkbox__box::after {
+        filter: invert(1);
+    }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+    .hf-checkbox__box,
+    .hf-checkbox__box::after {
+        transition: none !important;
+    }
+}
+
+/* Utility: small variant */
+.hf-checkbox--sm .hf-checkbox__box {
+    width: 16px;
+    height: 16px;
+}
+
+.hf-checkbox--sm .hf-checkbox__box::after {
+    width: calc(16px * 0.56);
+    height: calc(16px * 0.56);
+}
+
+
+.hf-checkbox.inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn--disabled {
+    background-color: #6c757d;
+    color: #c9c9c9;
+    border: 1px solid #6c757d;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.address-error-top {
+    color: var(--danger);
+}
+
+
+.progress-6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 22px;
+    border-radius: 20px;
+    color: #f33d3d;
+    border: 2px solid;
+    position: relative;
+    z-index: 9999;
+}
+
+.progress-6::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: p6 2s infinite;
+}
+
+@keyframes p6 {
+    100% {
+        inset: 0;
+    }
+}
+
+@keyframes p7 {
+    100% {
+        background-size: 100%;
+    }
+}
+
+.kalulitlle {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes p1 {
+    100% {
+        background-size: 100%;
+    }
+}
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}

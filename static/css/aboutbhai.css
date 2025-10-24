@@ -1,0 +1,65 @@
+/**
+HiveFusion Lab - Cybersecurity Tools for Everyone
+Copyright © 2025 HiveFusion Lab.
+All rights reserved.
+
+Website: https://www.hivefusion.in
+License: Proprietary — Unauthorized copying, modification, or distribution of this file is strictly prohibited without written consent.
+Author: HiveFusion Lab Development Team
+**/
+
+.about__hero {
+    padding: 40px;
+}
+
+.about__hero-content {
+    width: 40ch;
+}
+
+.about__heading {
+    font-size: var(--large-font);
+}
+
+.about__hero-art img{
+    width: 70%;
+}
+
+.about__subheading {
+    width: 45ch;
+}
+
+.about__founder-info p {
+    width: 50ch;
+}
+
+.about__cta {
+
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.about__cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about__cta p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about__cta a.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #2a4eff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.about__cta a.btn:hover {
+    background-color: #1f3fd6;
+}
