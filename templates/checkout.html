@@ -1,0 +1,272 @@
+<!--
+HiveFusion Lab - Cybersecurity Tools for Everyone
+Copyright © 2025 HiveFusion Lab.
+All rights reserved.
+
+Website: https://www.hivefusion.in
+License: Proprietary — Unauthorized copying, modification, or distribution of this file is strictly prohibited without written consent.
+Author: HiveFusion Lab Development Team
+-->
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout • HiveFusion Lab</title>
+    <meta name="description"
+        content="Secure checkout for HiveFusion Lab. Choose UPI, card, or pay on delivery and review your order details." />
+    <meta property="og:title" content="Checkout • HiveFusion Lab" />
+    <meta property="og:description" content="Choose your payment method and review your order." />
+    <meta property="og:type" content="website" />
+    <link rel="preload" href="{% static 'css/style.css' %} " as="style" />
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/lab.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}" media="screen and (max-width: 767px)">
+    <script src="{% static 'logic/checkout.js' %}" defer></script>
+</head>
+
+<body class="bg-page text-body">
+    <div class="free__shipping">
+        <div class="w-full p-10 text-center">
+            <p class="text-sm--mobile text-white text-xs underline "><strong> Free Shipping on orders above ₹499 (India
+                    only) </strong>
+            </p>
+        </div>
+    </div>
+    <nav class="p-30 w-full">
+        <div class="px-15">
+            <div class="flex sp-btwn p-15 nav__main">
+                <div> <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                            srcset=""></a></div>
+                <div class="nav__pages">
+                    <ul class="flex ls-none center">
+                        <li><a href="" class="underline p-15 text-prm">Home</a></li>
+                        <li><a href="#products-line-up" class="text-deco-none p-15 text-prm">Products</a></li>
+                        <li><a href="/about" class="text-deco-none p-15 text-prm">About</a></li>
+                        <li><a href="/support" class="text-deco-none p-15 text-prm">Support</a></li>
+                        <li>
+                            <div class="space-x-10 cp"><a href="/cart"><img
+                                        src="{% static './images/Shopping cart.svg' %}" alt="hivefusion lab cart">
+                                </a></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hidden show--mobile flex x-center mt-10">
+                    <label for="menu-toggle" class="menu__open">
+                        <img src="{% static 'images/hamburger-manu-mobile.png' %}" alt="" srcset="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu__toggle" />
+        <div class="menu__mobile">
+            <ul>
+                <li><a class="underline" href="/">Home</a></li>
+                <li><a href="products-line-up">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/cart"><img src="{% static 'images/Shopping cart.svg' %}" alt="Cart" /></a></li>
+                <li><label for="menu-toggle" class="menu__close" id="closeMenu">Close ✕</label></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <main class="container pad-y-lg hmt">
+        <h1 class="font-semibold h1 margin-b-md">Checkout</h1>
+
+        <section class="hf-grid-2 gap-xl">
+            <!-- LEFT: Payment options -->
+            <div class="card pad-lg hf-stretch">
+                <h2 class="h3 margin-b-sm">Payment options</h2>
+                <p class="muted margin-b-md">Choose how you’d like to pay. All payments are secure and private.</p>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active cp" data-tab="upi">Pay Online</button>
+                    <button class="tab-btn cp" data-tab="cod">Cash on Delivery</button>
+                </div>
+
+                <!-- Panels -->
+                <form id="checkout-form" class="margin-t-md" novalidate>
+                    <!-- UPI -->
+                    <div class="tab-panel show" id="tab-upi" role="tabpanel" aria-labelledby="tab-upi-btn">
+                        <label class="label--checkout" for="Order-notes--checkout">Order Notes</label>
+                        <input class="input" type="text" id="Order-notes--checkout" name="order-notes" placeholder="Share any specific requests or details that will help us complete your order."
+                            inputmode="text" autocomplete="off" />
+
+                        <div class="help pl-5">Your payment will be processed securely via Razorpay.</div>
+
+                        <div class="mini-gallery">
+                            <img src="{% static 'images/phone_pe_logo.png' %}" alt="PhonePe" width="112" />
+                            <img src="{% static 'images/Google_Pay_Logo.svg.png' %}" alt="Google Pay" width="72" />
+                            <img src="{% static 'images/Paytm_Logo.jpg' %}" alt="Paytm" width="72" />
+                            <img src="{% static 'images/upi-logo.svg' %}" alt="UPI" width="52" />
+                        </div>
+                        <div class="mini-gallery g-15 pl-10">
+                            <img src="{% static 'images/Visa_Brandmark_Blue_RGB_2021.png' %}" alt="Visa" width="48"
+                                height="16" />
+                            <img src="{% static 'images/mastercard_logo.png' %}" alt="Mastercard" width="48" />
+                            <img src="{% static 'images/rupay-card-logo.png' %}" alt="RuPay" width="48" />
+                        </div>
+                    </div>
+
+                    <!-- Cash on Delivery -->
+                    <div class="tab-panel" id="tab-cod" role="tabpanel" aria-labelledby="tab-cod-btn">
+                        <p class="margin-b-sm text-sm">Your trust is our currency! <strong> We're not accepting cash on
+                                delivery</strong> at the moment.</p>
+
+                        <label class="label--checkout" for="codPhone">Mobile number</label>
+                        <input class="input cna" type="tel" id="codPhone" name="codPhone" placeholder="+91 9XXXXXXXXX"
+                            inputmode="tel" autocomplete="tel" disabled />
+
+                        <div class="mini-gallery g-20">
+                            <img src="{% static 'images/upi-logo.svg' %}" alt="UPI on delivery" width="48" />
+                            <img class="pl-10" src="{% static 'images/cash-on-delivery-logo.png' %}"
+                                alt="Cash on delivery" width="48" />
+                        </div>
+                    </div>
+
+                    <div class="margin-t-lg flex sp-btwn y-center">
+                        <div class="flex y-center gap-sm">
+                            <input id="agree" type="checkbox" class="checkbox cp" />
+                            <label for="agree" class="small">
+                                I agree to the <a class="font-black" href="/policies/responsible-use/">Responsible
+                                    Use</a> and <a class="font-black" href="/policies/terms/">Terms</a>.
+                            </label>
+                        </div>
+                        <button id="payBtn" class="btn btn-primary" type="button" disabled>Proceed to Pay</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- RIGHT: Order summary -->
+            <aside class="card pad-lg hf-sticky">
+                <h2 class="h3 margin-b-md">Your order</h2>
+
+                <ul class="order-list">
+                    <li class="order-item">
+                        <img class="thumb obj-fit-cover"
+                            src="{% static 'images/hivefusion-lab-pocket-mini-white-background-0x0b.png' %}" width="64"
+                            height="64" alt="Pocket Mini" />
+                        <div class="grow">
+                            <div class="title">Pocket Mini</div>
+                            <div class="muted small">Keychain Wi-Fi learning tool</div>
+                            <div class="qty-row">
+                                <button class="qty-btn" data-qty="dec" aria-label="Decrease quantity">−</button>
+                                <input id="qty" class="qty-input" type="number" min="1" value="1" />
+                                <button class="qty-btn" data-qty="inc" aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+                        <div class="price" id="itemPrice" data-unit="159">₹159</div>
+                    </li>
+                </ul>
+
+                <div class="totals">
+                    <div class="row"><span>Subtotal</span><strong id="subtotal">₹159</strong></div>
+                    <div class="row"><span>Shipping</span><strong id="shipping">₹49</strong></div>
+                    <div class="row grand"><span>Total</span><strong id="grand">₹208</strong></div>
+                </div>
+
+                <div class="eta card-soft pad-md margin-t-md">
+                    <div class="small muted">Estimated delivery</div>
+                    <div class="h4" id="etaDate">—</div>
+                    <div class="small muted">Standard delivery (4&ndash;7 business days)</div>
+                </div>
+
+                <div class="secure-note small muted margin-t-sm">
+                    Payments are encrypted. We never store full card details. Cash/Pay on Delivery is subject to
+                    serviceability.
+                </div>
+            </aside>
+        </section>
+
+        <section class="smt ethics-note card-soft pad-md margin-t-xl smfuck">
+            <strong class="text-danger">Ethical Use:</strong> HiveFusion Lab products are designed for education and
+            authorized security
+            testing only. Always obtain permission before testing any network or device.
+            See our <a class="font-black" href="/policies/responsible-use/">Responsible Use Policy</a>.
+        </section>
+    </main>
+
+    <footer class="footer hmt">
+        <div class="footer__left">
+            <div class="footer__logo">
+                <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                        srcset=""></a>
+            </div>
+            <p class="footer__description">
+                Hivefusion Lab is the first Indian-origin company dedicated to building consumer-grade cybersecurity
+                hardware tools for network vulnerability testing, RFID, HID, and ethical hacking applications.
+            </p>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/hivefusion-lab" aria-label="LinkedIn"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M4.983 3.5c0 1.381-1.114 2.5-2.483 2.5s-2.5-1.119-2.5-2.5S.619 1 1.983 1s3 1.119 3 2.5zM.5 7h4.966v12H.5V7zm7.002 0h4.768v1.633h.066c.663-1.26 2.287-2.59 4.708-2.59 5.034 0 5.966 3.31 5.966 7.608V19h-5v-5.892c0-1.41-.025-3.227-1.967-3.227-1.97 0-2.27 1.535-2.27 3.11V19H7.5V7z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/hivefusion_lab/" target="_blank" aria-label="Instagram"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.69 2.19a1.19 1.19 0 110 2.38 1.19 1.19 0 010-2.38zm-4.19 2.88a4.38 4.38 0 110 8.75 4.38 4.38 0 010-8.75zm0 1.5a2.88 2.88 0 100 5.75 2.88 2.88 0 000-5.75z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__copyright">
+                <strong>© 2025 Hivefusion lab , All rights reserved</strong>
+            </div>
+        </div>
+
+        <div class="footer__nav">
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Product</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="/product/hivefusion-lab-pocket-mini/" class="footer__nav-link">Pocket mini</a></li>
+                    <li><a href="#" class="footer__nav-link">Console</a></li>
+                    <li><a href="#" class="footer__nav-link">Lab L1</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Resources</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="#" class="footer__nav-link">Documentation</a></li>
+                    <li><a href="#" class="footer__nav-link">Tutorials</a></li>
+                    <li><a href="/support" class="footer__nav-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Company</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="about" class="footer__nav-link">About</a></li>
+                    <li><a href="#" class="footer__nav-link">Careers</a></li>
+                    <li><a href="#" class="footer__nav-link">Partner</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    {% if user.is_authenticated %}
+    <a href="/profile" class="signup__floating-btn">Profile</a>
+
+    {% else %}
+    <a href="/signup" class="signup__floating-btn">Sign up</a>
+
+    {% endif %}
+
+</body>
+
+</html>

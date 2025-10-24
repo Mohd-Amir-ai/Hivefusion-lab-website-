@@ -1,0 +1,144 @@
+<!--
+HiveFusion Lab - Cybersecurity Tools for Everyone
+Copyright © 2025 HiveFusion Lab.
+All rights reserved.
+
+Website: https://www.hivefusion.in
+License: Proprietary — Unauthorized copying, modification, or distribution of this file is strictly prohibited without written consent.
+Author: HiveFusion Lab Development Team
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="description"
+        content="HiveFusion Lab is an emerging Indian startup building a cybersecurity community. We design compact, affordable tools for ethical hacking and wireless testing.">
+    <meta name="keywords"
+        content="HiveFusion Lab, cybersecurity tools, affordable hacking tools, ethical hacking India, Pocket Mini, Wi-Fi deauther, cyber tools India, hacker gadgets, penetration testing kits">
+
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta name="twitter:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta name="twitter:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lab.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="{% static 'css/kyahaibe.css' %}">
+    <script src="{% static 'logic/app.js' %}" defer></script>
+    <script src="{% static 'logic/p.js' %}" defer></script>
+    <title>HiveFusion Lab | Empowering Cybersecurity Enthusiasts with Affordable Tools</title>
+</head>
+
+<body>
+
+    <div class="free__shipping">
+        <div class="w-full p-10 text-center">
+            <p class="text-sm--mobile text-white text-xs underline "><strong> Free Shipping on orders above ₹499 (India
+                    only) </strong>
+            </p>
+        </div>
+    </div>
+    <nav class="p-30 w-full">
+        <div class="px-15">
+            <div class="flex sp-btwn p-15 nav__main">
+                <div> <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                            srcset=""></a></div>
+                <div class="nav__pages">
+                    <ul class="flex ls-none center">
+                        <li><a href="/" class="text-deco-none p-15 text-prm">Home</a></li>
+                        <li><a href="" class="text-deco-none p-15 text-prm">Products</a></li>
+                        <li><a href="about/" class="text-deco-none p-15 text-prm">About</a></li>
+                        <li><a href="" class="text-deco-none p-15 text-prm">Support</a></li>
+                        <li>
+                            <div class="space-x-10 cp"><img src="{% static 'images/Shopping cart.svg' %}" alt="hivefusion lab cart">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hidden show--mobile flex x-center mt-10">
+                    <label for="menu-toggle" class="menu__open">
+                        <img src="{% static 'images/hamburger-manu-mobile.png' %}" alt="" srcset="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu__toggle" />
+        <div class="menu__mobile">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/cart"><img src="{% static 'images/Shopping cart.svg' %}" alt="Cart" /></a></li>
+                <li><label for="menu-toggle" class="menu__close" id="closeMenu">Close ✕</label></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="cart__root w-full flex center px-20 mb-20">
+        <div class="cart">
+            <h2 class="cart__heading">CART</h2>
+            <p class="mb-10 text-sm font-light hidden">Tumhara Cyber Saman Yahan Hai</p>
+            <div class="cart__table">
+                <div class="cart__row cart__row--heading">
+                    <div>Item</div>
+                    <div>Price</div>
+                    <div>Quantity</div>
+                    <div>Subtotal</div>
+                </div>
+
+                <!-- Cart Item -->
+                <div id="cartContainer"></div>
+
+                <!-- Summary -->
+                <div class="cart__summary">
+                    <h3 class="cart__summary__heading">Bill Summary</h3>
+                    <div class="cart__summary__item">
+                        <span>Subtotal</span>
+                        <span>398₹</span>
+                    </div>
+                    <div class="cart__summary__item">
+                        <span>Tax (18%)</span>
+                        <span>71.64₹</span>
+                    </div>
+                    <div class="cart__summary__item">
+                        <span>Shipping</span>
+                        <span>40</span>
+                    </div>
+                    <div class="cart__summary__item">
+                        <span class="pr-10">Coupon</span>
+                        <input type="text" placeholder="Enter code">
+                    </div>
+                    <div class="cart__summary__item cart__summary__total">
+                        <strong>Total</strong>
+                        <strong>469.64₹</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <a href="/sign_in.html" class="signup__floating-btn">Sign up</a>
+</body>

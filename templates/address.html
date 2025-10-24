@@ -1,0 +1,324 @@
+<!--
+HiveFusion Lab - Cybersecurity Tools for Everyone
+Copyright © 2025 HiveFusion Lab.
+All rights reserved.
+
+Website: https://www.hivefusion.in
+License: Proprietary Unauthorized copying, modification, or distribution of this file is strictly prohibited without written consent.
+Author: HiveFusion Lab Development Team
+-->
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="description"
+        content="HiveFusion Lab is an emerging Indian startup building a cybersecurity community. We design compact, affordable tools for ethical hacking and wireless testing.">
+    <meta name="keywords"
+        content="HiveFusion Lab, cybersecurity tools, affordable hacking tools, ethical hacking India, Pocket Mini, Wi-Fi deauther, cyber tools India, hacker gadgets, penetration testing kits">
+
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta name="twitter:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta name="twitter:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lab.css' %}">
+    <link rel="stylesheet" href="{% static 'css/address.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}" media="screen and (max-width: 767px)">
+    <script type="module" src="{% static 'logic/a.js' %}" defer></script>
+    <title>HiveFusion Lab | Empowering Cybersecurity Enthusiasts with Affordable Tools</title>
+</head>
+
+<body class="bg-primary text-prm">
+    <div class="free__shipping">
+        <div class="w-full p-10 text-center">
+            <p class="text-sm--mobile text-white text-xs underline "><strong> Free Shipping on orders above ₹499 (India
+                    only) </strong>
+            </p>
+        </div>
+    </div>
+    <nav class="p-30 w-full">
+        <div class="px-15">
+            <div class="flex sp-btwn p-15 nav__main">
+                <div> <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                            srcset=""></a></div>
+                <div class="nav__pages">
+                    <ul class="flex ls-none center">
+                        <li><a href="/" class="underline p-15 text-prm">Home</a></li>
+                        <li><a href="/#products-line-up" class="text-deco-none p-15 text-prm">Products</a></li>
+                        <li><a href="/about" class="text-deco-none p-15 text-prm">About</a></li>
+                        <li><a href="/support" class="text-deco-none p-15 text-prm">Support</a></li>
+                        <li>
+                            <div class="space-x-10 cp"><a href="/cart"><img
+                                        src="{% static './images/Shopping cart.svg' %}" alt="hivefusion lab cart">
+                                </a></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hidden show--mobile flex x-center mt-10">
+                    <label for="menu-toggle" class="menu__open">
+                        <img src="{% static 'images/hamburger-manu-mobile.png' %}" alt="" srcset="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu__toggle" />
+        <div class="menu__mobile">
+            <ul>
+                <li><a class="underline" href="/">Home</a></li>
+                <li><a href="products-line-up">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/cart"><img src="{% static 'images/Shopping cart.svg' %}" alt="Cart" /></a></li>
+                <li><label for="menu-toggle" class="menu__close" id="closeMenu">Close ✕</label></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <main class="checkout">
+        <!-- Left: Order Summary -->
+        <section class="card">
+            <h2 class="section__title">Order Summary</h2>
+            <div class="order__items">
+                {% for item in message %}
+                <div class="order__item">
+                    <!-- Product image -->
+                    <div class="order__img">
+                        <img src="{{ item.image_url }}" alt="{{ item.name|default:'Product' }}" width="90" height="90">
+                    </div>
+
+                    <!-- Product details -->
+                    <div class="order__details">
+                        <div class="order__name">
+                            <a href="{{ item.url }}" class="text-main hover__underline text-deco-none font-black">
+                                {{ item.name|default:"Unnamed Product" }}
+                            </a>
+                        </div>
+                        <div class="order__meta">Qty: {{ item.qty }}</div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="order__price">₹{{ item.price }}</div>
+                </div>
+                {% empty %}
+                <p>Your cart is empty.</p>
+                {% endfor %}
+            </div>
+            <div class="summary">
+
+                <div class="summary__row">
+                    <span>Subtotal</span>
+                    <span>₹{{ uc.1 }}</span>
+                </div>
+
+                <div class="summary__row">
+                    <span>Discount</span>
+                    <span>-₹{{ uc.4 }}</span>
+                </div>
+
+                <div class="summary__row">
+                    <span>Sales tax (18%)</span>
+                    <span class="text-danger">+₹{{ uc.2 }}</span>
+                </div>
+
+                <div class="summary__row">
+                    <span>Shipping</span>
+                    <span>₹50</span>
+                </div>
+
+                <div class="summary__row summary__total">
+                    <span>Total Due</span>
+                    <span>₹{{ uc.3 }}</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Right: Shipping Address -->
+        <section class="card">
+            <h2 class="section__title">Shipping Address</h2>
+
+            <form class="form" action="" method="post" novalidate>
+                {% csrf_token %}
+                <!-- Contact Details -->
+                <div class="form__row">
+                    <div class="form__field">
+                        <label class="form__label" for="fname">First Name</label>
+                        <input class="form__input" type="text" id="fname" name="fname" value="{{ shipping.fname }}">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="lname">Last Name</label>
+                        <input class="form__input" type="text" id="lname" name="lname" value="{{ shipping.lname }}">
+                    </div>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="email">Email</label>
+                    <input class="form__input" type="email" id="email" name="email" required
+                        value="{{ request.user.email }}" readonly>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="phone">Phone Number</label>
+                    <input class="form__input" type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required
+                        value="{{ shipping.phone }}">
+                </div>
+
+                <!-- Shipping Details -->
+                <div class="form__field">
+                    <label class="form__label" for="flat">Flat / House No.</label>
+                    <input class="form__input" type="text" id="flat" name="flat" value="{{ shipping.flat }}">
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="address">Address</label>
+                    <input class="form__input" type="text" id="address" name="address" value="{{ shipping.address }}">
+                </div>
+
+                <div class="form__row">
+                    <div class="form__field">
+                        <label class="form__label" for="city">City</label>
+                        <input class="form__input" type="text" id="city" name="city" value="{{ shipping.city }}">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="state">State</label>
+                        <input class="form__input" type="text" id="state" name="state" value="{{ shipping.state }}">
+                    </div>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__field">
+                        <label class="form__label" for="pincode">Postal Code</label>
+                        <input class="form__input" type="text" id="pincode" name="pincode"
+                            value="{{ shipping.pincode }}">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="landmark">Famous Landmark</label>
+                        <input class="form__input" type="text" id="landmark" name="landmark"
+                            value="{{ shipping.landmark }}">
+                    </div>
+                </div>
+
+                <div class="form__checkbox">
+                    <label class="hf-checkbox">
+                        <input class="hf-checkbox__input" type="checkbox" id="same" name="same" checked>
+
+                        <span class="hf-checkbox__box" aria-hidden="true"></span>
+                        <label class="hf-checkbox__label" for="same">My shipping and billing address are the
+                            same</label>
+                    </label>
+
+                    <div>
+                        <label class="hf-checkbox">
+                            <input class="hf-checkbox__input" type="checkbox" name="agree" />
+                            <span class="hf-checkbox__box" aria-hidden="true"></span>
+                            <span class="hf-checkbox__label">I agree to the <a href="" class="font-black">Responsible
+                                    Use</a></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="address_errors" aria-live="polite"></div>
+
+                <button type="submit"
+                    class="btn btn-primary btn__address intro__button--primary intro__button--mobile">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__left">
+            <div class="footer__logo">
+                <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                        srcset=""></a>
+            </div>
+            <p class="footer__description">
+                Hivefusion Lab is the first Indian-origin company dedicated to building consumer-grade cybersecurity
+                hardware tools for network vulnerability testing, RFID, HID, and ethical hacking applications.
+            </p>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/hivefusion-lab" aria-label="LinkedIn"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M4.983 3.5c0 1.381-1.114 2.5-2.483 2.5s-2.5-1.119-2.5-2.5S.619 1 1.983 1s3 1.119 3 2.5zM.5 7h4.966v12H.5V7zm7.002 0h4.768v1.633h.066c.663-1.26 2.287-2.59 4.708-2.59 5.034 0 5.966 3.31 5.966 7.608V19h-5v-5.892c0-1.41-.025-3.227-1.967-3.227-1.97 0-2.27 1.535-2.27 3.11V19H7.5V7z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/hivefusion_lab/" target="_blank" aria-label="Instagram"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.69 2.19a1.19 1.19 0 110 2.38 1.19 1.19 0 010-2.38zm-4.19 2.88a4.38 4.38 0 110 8.75 4.38 4.38 0 010-8.75zm0 1.5a2.88 2.88 0 100 5.75 2.88 2.88 0 000-5.75z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__copyright">
+                <strong>© 2025 Hivefusion lab , All rights reserved</strong>
+            </div>
+        </div>
+
+        <div class="footer__nav">
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Product</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="/product/hivefusion-lab-pocket-mini/" class="footer__nav-link">Pocket mini</a></li>
+                    <li><a href="#" class="footer__nav-link">Console</a></ li>
+                    <li><a href="#" class="footer__nav-link">Lab L1</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Resources</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="#" class="footer__nav-link">Documentation</a></li>
+                    <li><a href="#" class="footer__nav-link">Tutorials</a></li>
+                    <li><a href="/support" class="footer__nav-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Company</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="about" class="footer__nav-link">About</a></li>
+                    <li><a href="#" class="footer__nav-link">Careers</a></li>
+                    <li><a href="#" class="footer__nav-link">Partner</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loadingOverlay" class="hidden">
+        <div class="progress-6 hidden" id="4n35oct"></div>
+    </div>
+
+    <script type="module">
+        import initAddressForm from "{% static 'logic/a.js' %}";
+        // init: pass selector and options (use debug:true while developing)
+        initAddressForm('.form', { selectors: { submitButton: '.btn__address' }, debug: true, ajaxSubmit: false });
+    </script>
+</body>
+
+</html>

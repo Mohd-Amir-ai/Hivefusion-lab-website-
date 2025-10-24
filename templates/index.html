@@ -1,0 +1,478 @@
+<!--
+HiveFusion Lab - Cybersecurity Tools for Everyone
+Copyright © 2025 HiveFusion Lab.
+All rights reserved.
+
+Website: https://www.hivefusion.in
+License: Proprietary Unauthorized copying, modification, or distribution of this file is strictly prohibited without written consent.
+Author: HiveFusion Lab Development Team
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="description"
+        content="HiveFusion Lab is an emerging Indian startup building a cybersecurity community. We design compact, affordable tools for ethical hacking and wireless testing.">
+    <meta name="keywords"
+        content="HiveFusion Lab, cybersecurity tools, affordable hacking tools, ethical hacking India, Pocket Mini, Wi-Fi deauther, cyber tools India, hacker gadgets, penetration testing kits">
+
+    <meta property="og:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta property="og:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+    <meta property="og:url" content="https://www.hivefusion.in" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HiveFusion Lab | Cybersecurity for Everyone" />
+    <meta name="twitter:description"
+        content="Join the new era of affordable cybersecurity tools. HiveFusion Lab creates powerful and compact devices for ethical hacking and digital exploration." />
+    <meta name="twitter:image" content="https://yourdomain.com/images/og-pocket-mini.jpg" />
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lab.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}" media="screen and (max-width: 767px)">
+    <script src="{% static 'logic/app.js' %}" defer></script>
+    <title>HiveFusion Lab | Empowering Cybersecurity Enthusiasts with Affordable Tools</title>
+</head>
+
+<body>
+    <div class="free__shipping">
+        <div class="w-full p-10 text-center">
+            <p class="text-sm--mobile text-white text-xs underline "><strong> Free Shipping on orders above ₹499 (India
+                    only) </strong>
+            </p>
+        </div>
+    </div>
+    <nav class="p-30 w-full">
+        <div class="px-15">
+            <div class="flex sp-btwn p-15 nav__main">
+                <div> <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                            srcset=""></a></div>
+                <div class="nav__pages">
+                    <ul class="flex ls-none center">
+                        <li><a href="" class="underline p-15 text-prm">Home</a></li>
+                        <li><a href="#products-line-up" class="text-deco-none p-15 text-prm">Products</a></li>
+                        <li><a href="/about" class="text-deco-none p-15 text-prm">About</a></li>
+                        <li><a href="/support" class="text-deco-none p-15 text-prm">Support</a></li>
+                        <li>
+                            <div class="space-x-10 cp"><a href="/cart"><img
+                                        src="{% static './images/Shopping cart.svg' %}" alt="hivefusion lab cart">
+                                </a></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hidden show--mobile flex x-center mt-10">
+                    <label for="menu-toggle" class="menu__open">
+                        <img src="{% static 'images/hamburger-manu-mobile.png' %}" alt="" srcset="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu__toggle" />
+        <div class="menu__mobile">
+            <ul>
+                <li><a class="underline" href="/">Home</a></li>
+                <li><a href="products-line-up">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/cart"><img src="{% static 'images/Shopping cart.svg' %}" alt="Cart" /></a></li>
+                <li><label for="menu-toggle" class="menu__close" id="closeMenu">Close ✕</label></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <section class="intro">
+        <div class="flex w-full mt-10 p-25 intro__main">
+            <div class="w-1-2 flex y-center ml-10 intro__text__main">
+                <div class="">
+                    <div class="p-20">
+                        <h2 class="intro__h2">Innovate. Secure.<br> Connect.</h2>
+                    </div>
+                    <div class="space-x-20 w-2-3">
+                        <p class="text-lg intro__p">We believe every bright mind deserves powerful tools regardless of
+                            budget.
+                        </p>
+                    </div>
+                    <div class="flex space-y-20 px-20 g-15">
+                        <a href="#products-line-up">
+                            <button type="button"
+                                class="btn btn-primary intro__button--primary intro__button--mobile">Products</button>
+                        </a>
+
+                        <a href="#join-in">
+                            <button type="button"
+                                class="btn btn-secondary intro__button--secondary intro__button--mobile">Watch Demo
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="intro__image__main w-1-2 flex center ">
+                <img class="w-2-3" src="{% static 'images/hifefusion-lab-console-front-with-cable.png' %}" alt=' A front-facing shot of the HiveFusion Lab Console, a black rectangular ESP8266-based microcontroller with an integrated display and buttons. A white USB-C cable is plugged into the top. The display shows menu options "
+                    About," "Preset Motions," and "Link." Below the display are "UP" and "DOWN" buttons flanking
+                    a "SELECT" button. The console also features exposed GPIO pins along the sides and "RST" and "BURN"
+                    buttons at the bottom. The "HiveLab." logo is visible in the bottom left corner, alongside a penguin
+                    icon. The console offers a slick design with Type-C power input, making it suitable for building
+                    tools requiring an integrated display and buttons.' srcset="">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="hero__quote__one mt-30">
+        <div class="w-full flex x-center text-center">
+            <div>
+                <p class="hero__quote__one__highlight font-bold">"It's not just about what we build.</p>
+                <p class="hero__quote__one__simple font-bold">It's about who we build it for."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ui__shift pt-10 ">
+        <div class="ui__root bg-secondary w-full p-30 flex sp-btwn">
+            <div class="ui__shift__textmain w-1-2 flex center ml-30">
+                <div>
+                    <div class="ui__shift__heading">
+                        <h2 class="text-btn">We believe in empowerment through innovation.</h2>
+                    </div>
+                    <div class="ui__shift__peragraph font-extralight mt-30 lh-2">
+                        <p class="text-btn">In a world demanding greater digital control, we believe anyone with the
+                            right mindset should
+                            have access to world-class Ethical Hacking tools. We're here to break barriers and foster a
+                            new era of
+                            secure exploration</p>
+                    </div>
+                    <div class="ui__shift_lebals flex g-10 mt-30">
+                        <div class="label label--ui__shift">
+                            <p>USB-C</p>
+                        </div>
+                        <div class="label label--ui__shift">
+                            <p>Wi-Fi deauther</p>
+                        </div>
+                        <div class="label label--ui__shift">
+                            <p>Ultra compact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui__shift__image flex center w-1-2"><img class="px-20"
+                    src="{% static 'images/ultramini-pocket-mini-mockup-render.svg' %}" alt="" srcset="">
+            </div>
+        </div>
+    </section>
+
+    <section class="hero__quote__two">
+        <div class="w-full flex x-center text-center">
+            <div>
+                <p class="hero__quote__two__highlight font-bold">Crafted for unparalleled capability and design.</p>
+                <p class="hero__quote__two__simple mt-10 lh--mobile">Every HiveFusion device is engineered from the
+                    ground up for
+                    optimal performance, intuitive usability, and a design that stands apart. We fuse cutting-edge
+                    technology with thoughtful aesthetics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="product__pocket__mini" id="products-line-up">
+        <div class="product__pocket__mini flex w-full">
+            <div class="product__pocket__mini__image w-full--mobile w-1-2">
+                <div id="pocket__mini__slider">
+                    <div class="product__pocket__mini__gallery">
+                        <div class="product__pocket__mini__mainimg">
+                            <img id="pocket-mini-main-image"
+                                src="{% static 'images/hivefusion-lab-pocket-mini-white-background-0x0b.png' %}"
+                                alt="HiveFusion Pocket Mini Front View" loading="eager">
+                        </div>
+
+                        <div class="product__pocket__mini__thumbnail__list">
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/Shopping cart.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/Shopping cart.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/Shopping cart.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-1-2 mt-30 w-full--mobile">
+
+                <div class="product__pocket__mini__product__heading">
+                    <div class="globel__banner p-10">
+                        <p>Sale 23% off</p>
+                    </div>
+                    <h2>
+                        <a class="text-prm" href="product/hivefusion-lab-pocket-mini/" target="_blank"
+                            rel="noopener noreferrer">hivefusion
+                            labs Pocket mini</a>
+                    </h2>
+                </div>
+                <div class="product__pocket__mini__product__description mt-10 lh--mobile">
+                    <p class="font-light">Imagine a super-tiny gadget, so small you can keep it on your keychain or in
+                        that little pocket in your jeans we call it the Pocket Mini! It’s like a Wi-Fi jadoo ka pitara
+                        (magic box) that can play cool little tricks with networks</p>
+                </div>
+                <div class="mt-20 p10--mobile flex y-center">
+                    <div>
+                        <img src="{% static 'images/4-star-rating.svg' %}" alt="">
+                    </div>
+                    <div class="pl-10">
+                        <span>
+                            <span class="font-bold">4.0/5 </span> <span class="font-light text-sm"> 12 reviews</span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="flex mt-20 y-center g-10 p10--mobile product__pocket__mini__pricecontainer">
+                    <div id="product__pocket__mini__old__price">
+                        <p>259 &#x20B9;</p>
+                    </div>
+                    <div id="product__pocket__mini__set__price">
+                        <p>199 &#x20B9;</p>
+                    </div>
+                    <div id="product__pocket__mini__freekamaal">
+                        <p class="text-sm font-light">+ Free name addition in device firmware</p>
+                    </div>
+                </div>
+                <div class="product__pocket__mini__buttons flex gap-10 mt-30 x-center--mobile">
+                    <a href="/shipping-address"><button type="button" class="btn btn-primary intro__button--primary mr-10">Buy now</button></a>
+
+                    <button id="index-pocket-mini-learn-more" type="button"
+                        class="btn btn-secondary intro__button--secondary">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero__quote__three">
+        <div class="w-full flex x-center text-center">
+            <div class="flex-col y-center">
+                <p class="hero__quote__two__highlight font-bold">Disrupting the market with powerful, affordable
+                    solutions.</p>
+                <p class="hero__quote__two__simple mt-10 lh--mobile">From advanced network analyzers to next-gen
+                    penetration
+                    testing kits, our products redefine what's possible, empowering you to secure your digital world
+                    with confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="product__pocket__mini">
+        <div class="flex flex-collumn--mobile w-full">
+            <div class="w-1-2 w-full--mobile">
+                <div id="pocket__mini__slider">
+                    <div class="product__pocket__mini__gallery">
+                        <div class="product__console__mainimg flex center">
+                            <img id="pocket-mini-main-image"
+                                src="{% static 'images/hifefusion-lab-console-front-with-cable.png' %}"
+                                alt="HiveFusion Pocket Mini Front View" loading="eager">
+                        </div>
+
+                        <div class="product__pocket__mini__thumbnail__list">
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/ultramini-pocket-mini-mockup-render.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/Shopping cart.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                            <div class="product__pocket_mini__card p-10 flex center">
+                                <img class="product__pocket__mini__thumbnail"
+                                    src="{% static 'images/Shopping cart.svg' %}"
+                                    data-full="images/ultramini-pocket-mini-mockup-render.svg" alt="Front View"
+                                    loading="lazy">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-1-2 mt-30 w-full--mobile">
+                <div class="product__pocket__mini__product__heading">
+                    <a class="text-prm" href="product/hivefusion-lab-console/" rel="noopener noreferrer"
+                        target="_blank">
+                        <h2>hivefusion labs console</h2>
+                        <a>
+                </div>
+                <div class="product__pocket__mini__product__description  mt-10 lh--mobile">
+                    <p class="font-light">Imagine a super-tiny gadget, so small you can keep it on your keychain or in
+                        that little pocket in your jeans we call it the Pocket Mini! This little device is like a secret
+                        agent for the airwaves. It can do some cool tricks like Deauth , Beacon , Probe</p>
+                </div>
+                <div class="w-full flex mt-20 y-center g-10 ">
+                    <div id="product__pocket__mini__old__price">
+                        <p>259 &#x20B9;</p>
+                    </div>
+                    <div id="product__pocket__mini__set__price">
+                        <p>199 &#x20B9;</p>
+                    </div>
+                    <div id="product__pocket__mini__freekamaal">
+                        <p class="text-sm font-light">+ Free name addition in device</p>
+                    </div>
+                </div>
+                <div class="product__console__buttons  flex gap-10 mt-30">
+                    <button type="button" class="btn btn-primary intro__button--primary mr-10">Buy now</button>
+                    <button type="button" class="btn btn-secondary intro__button--secondary">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming h-fit p-30" id="join-in">
+        <div class="flex-col y-center mt-30  p-30 upcoming__h2__div">
+            <h2 class="upcoming__h2 mt-10">Coming Soon</h2>
+        </div>
+        <div class="upcoming__tagline w-full flex center">
+            <p class="text-btn font-light ">A compact all-in-one toolkit like Flipper Zero packed with Deauther, HID,
+                Evil Twin, IR, Display GUI, Mobile Control & GPIO expansion.</p>
+        </div>
+        <div class="flex center mt-30">
+            <div class="upcoming__notify p-5">
+                <input id="Join-email" name="Join-email" type="text" class="upcoming__input"
+                    placeholder="Please enter your email address">
+                <button class="upcoming__button" onclick="joinin()">Notify Me</button>
+            </div>
+        </div>
+        <div class="py-20">
+            <p class="text-btn text-center text-xs font-light underline">Sign up now for a chance to win a <strong>
+                    limited-edition HiveFusion Lab L1 </strong> - free!</p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <p id="response-msg"></p>
+        </div>
+        <div class="contact" id="content-form">
+            <h2 class="contact__heading">Get in Touch</h2>
+            <form id="contact-form" class="contact__form">
+                {% csrf_token %}
+                <div class="contact__field">
+                    <label for="name" class="contact__label">Name</label>
+                    <input type="text" id="name" name="name" class="contact__input" required>
+                </div>
+                <div class="contact__field">
+                    <label for="email" class="contact__label">Email</label>
+                    <input type="email" id="email" name="email" class="contact__input" required>
+                </div>
+                <div class="contact__field">
+                    <label for="message" class="contact__label">Message</label>
+                    <textarea id="message" name="message" rows="5" class="contact__textarea" required></textarea>
+                </div>
+                <button type="submit" class="contact__button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__left">
+            <div class="footer__logo">
+                <a href="/"> <img src="{% static 'images/logo-light-mode.svg' %}" alt="HiveFusion Lab logo"
+                        srcset=""></a>
+            </div>
+            <p class="footer__description">
+                Hivefusion Lab is the first Indian-origin company dedicated to building consumer-grade cybersecurity
+                hardware tools for network vulnerability testing, RFID, HID, and ethical hacking applications.
+            </p>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/company/hivefusion-lab" aria-label="LinkedIn"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M4.983 3.5c0 1.381-1.114 2.5-2.483 2.5s-2.5-1.119-2.5-2.5S.619 1 1.983 1s3 1.119 3 2.5zM.5 7h4.966v12H.5V7zm7.002 0h4.768v1.633h.066c.663-1.26 2.287-2.59 4.708-2.59 5.034 0 5.966 3.31 5.966 7.608V19h-5v-5.892c0-1.41-.025-3.227-1.967-3.227-1.97 0-2.27 1.535-2.27 3.11V19H7.5V7z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/hivefusion_lab/" target="_blank" aria-label="Instagram"
+                    class="footer__social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="footer__social-icon" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.69 2.19a1.19 1.19 0 110 2.38 1.19 1.19 0 010-2.38zm-4.19 2.88a4.38 4.38 0 110 8.75 4.38 4.38 0 010-8.75zm0 1.5a2.88 2.88 0 100 5.75 2.88 2.88 0 000-5.75z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__copyright">
+                <strong>© 2025 Hivefusion lab , All rights reserved</strong>
+            </div>
+        </div>
+
+        <div class="footer__nav">
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Product</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="/product/hivefusion-lab-pocket-mini/" class="footer__nav-link">Pocket mini</a></li>
+                    <li><a href="#" class="footer__nav-link">Console</a></ li>
+                    <li><a href="#" class="footer__nav-link">Lab L1</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Resources</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="#" class="footer__nav-link">Documentation</a></li>
+                    <li><a href="#" class="footer__nav-link">Tutorials</a></li>
+                    <li><a href="/support" class="footer__nav-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-group">
+                <h4 class="footer__nav-title">Company</h4>
+                <ul class="footer__nav-list">
+                    <li><a href="about" class="footer__nav-link">About</a></li>
+                    <li><a href="#" class="footer__nav-link">Careers</a></li>
+                    <li><a href="#" class="footer__nav-link">Partner</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    {% if user.is_authenticated %}
+    <a href="/profile" class="signup__floating-btn">Profile</a>
+
+    {% else %}
+    <a href="/signup" class="signup__floating-btn">Sign up</a>
+
+    {% endif %}
+</body>
+
+</html>
